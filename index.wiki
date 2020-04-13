@@ -1,0 +1,6 @@
+= An Attempt Was Made =
+  * [[Tasks]] -- Keep it simple, _stupid_!!!
+  * [[Vim]] -- Features to practice, now.
+  * [[Fish]] -- Aliases and functions.
+  * [[Yabai]] -- Shortcuts and schemas.
+  * [[skhd]] -- Keyboard shortcuts.

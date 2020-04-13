@@ -1,0 +1,3 @@
+Read through all of the commands to see what options are available for navigating all of the windows.
+How to open a new development project workspace?
+How to save a workspace to be reopened later?

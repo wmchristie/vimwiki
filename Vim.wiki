@@ -1,0 +1,1 @@
+* so % - Source the current buffer (save first)
