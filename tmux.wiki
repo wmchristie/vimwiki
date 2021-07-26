@@ -1,0 +1,3 @@
+* Read an overview
+* List desirable features to learn
+* List customizations

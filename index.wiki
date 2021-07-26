@@ -1,6 +1,26 @@
 = An Attempt Was Made =
-  * [[Tasks]] -- Keep it simple, _stupid_!!!
-  * [[Vim]] -- Features to practice, now.
-  * [[Fish]] -- Aliases and functions.
-  * [[Yabai]] -- Shortcuts and schemas.
-  * [[skhd]] -- Keyboard shortcuts.
+
+== Workspaces ==
+1. Wiki
+2. Configuration
+3. Web/Research
+4. Trading
+5. Trading practice
+6. Python
+
+== Todo ==
+* create a tmux instance in WS2 with .dotfiles shell and vim of various configs
+* create a tmux in WS1 with shell and wiki.
+* Persist workspaces
+* Make shell recognize ctrl-shift chord
+* Make nvim recognize ctrl-shift chord
+
+== Index ==
+* [[tmux]]
+* [[i3]]
+* [[zsh]]
+* [[Tasks]] -- Keep it simple, _stupid_!!!
+* [[Vim]] -- Features to practice, now.
+* [[Fish]] -- Aliases and functions.
+* [[Yabai]] -- Shortcuts and schemas.
+* [[skhd]] -- Keyboard shortcuts.
