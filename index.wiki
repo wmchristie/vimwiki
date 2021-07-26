@@ -8,7 +8,13 @@
 5. Trading practice
 6. Python
 
+== Reminders ==
+tmux: ctrl-b ? lists keystrokes
+ctrl-b # for window by number
+tmux new -s<session-name>
+
 == Todo ==
+* make ctrl-shift the i3 mod key?
 * create a tmux instance in WS2 with .dotfiles shell and vim of various configs
 * create a tmux in WS1 with shell and wiki.
 * Persist workspaces
