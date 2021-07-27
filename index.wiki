@@ -1,11 +1,11 @@
 = An Attempt Was Made =
 
 == Workspaces ==
-1. Wiki
-2. Configuration
+1. Wiki - 0:zsh 1:vimwiki
+2. Configuration - 0:zsh/.dotfiles 1:vim
 3. Web/Research
 4. Trading
-5. Trading practice
+5. Trading practice - think or swim papter
 6. Python
 
 == Reminders ==
