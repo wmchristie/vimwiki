@@ -1,0 +1,16 @@
+= Networks =
+
+Cloud-Key Static IP: 192.168.34.7
+
+Gateway addresses
+{{{ip
+  192.168.id.41/24
+}}}
+
+Here there be dragons -> Dragon Home (192.168.73.41/24) -> WAN
+Chateeau Ste. Michelle -> Winery (192.168.71.41/24) -> WAN
+Wild Geese -> Sanctuary (192.168.34.41/24) -> WAN
+
+
+
+
