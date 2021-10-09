@@ -11,6 +11,6 @@ Here there be dragons -> Dragon Home (192.168.73.41/24) -> WAN
 Chateeau Ste. Michelle -> Winery (192.168.71.41/24) -> WAN
 Wild Geese -> Sanctuary (192.168.34.41/24) -> WAN
 
-
+Pi (192.168.3.14/24) -> WAN
 
 
