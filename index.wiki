@@ -3,7 +3,7 @@
 == Personal Network ==
 * [[houts_personal_network|Houts]]
 * [[home_personal_network|Home]]
-*
+
 == Workspaces ==
 1. Wiki - 0:zsh 1:vimwiki
 2. Configuration - 0:zsh/.dotfiles 1:vim
@@ -26,7 +26,7 @@ tmux new -s<session-name>
 * Make nvim recognize ctrl-shift chord
 
 == Index ==
-* [[thinkorswim|Think orSwim]]
+* [[thinkorswim|Think or Swim]]
 * [[tmux]]
 * [[i3]]
 * [[zsh]]

@@ -1,0 +1,44 @@
+= Wmxt Residence Network =
+
+== How to Update controller software ==
+ssh into the controller server
+
+```cd ~/docker/unifi
+docker-compose down
+docker-compose up --build -d
+```
+
+== Move or Redefine a Device ==
+Always `forget` a device before executing `set-default` on the device.
+
+Make sure the `Gateway IP` is correct in the default network in the controller software. It should point to the IP of
+the USG.
+
+=== Connect USG to ATT ===
+Att assigns `192.168.1.1` to the USG after the USG has been reset to factory defaults. Change that IP to 10.0.0.1,
+or your preference, as the first step. If you don't the USG will not be able to see the internet.
+
+=== Inform ===
+The `inform` url must be an IP address, not a domain name; give the controller server a static IP when you are done.
+Sample: `http://10.0.0.8:8080/inform`
+
+==== Network Application settings ====
+Set `Network application Hostname/IP` to the IP of the server that's running the controller, i.e., `10.0.0.6`.
+Enable `Override inform host with the Network application hostname/IP.`
+Save.
+
+Changing these values will probably cause all of your devices to get hoarked and require setting to factory defaults
+and begin the Chain of Frustration(TM).
+
+== SSH Keys to Devices ==
+
+== SMTP Server ==
+
+== Remote Logging ==
+
+== Firewall ==
+
+== ATT ==
+The Att router can provide wifi. It's IP is 192.168.1.254. The password is in 1Password.
+The `IP Passthrough` settings are under `Firewall`.
+
