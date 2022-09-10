@@ -1,28 +1,68 @@
 = Wmxt Residence Network =
 
-== How to Update controller software ==
+== Single Source of Truth SSoT ==
+Goal maintain a NAS hosted Git repo with inexpensive, encrypted, cloud backups.
+Giving back by making my configs public is all well and good, but the risks to security
+are too high, given that I don't know what I'm doing and will miss something.
+
+In the near future, when I start blogging and developing other content for public consumption,
+a curated repo of home lab configurations and tools will be possible and may even be a good idea.
+
+In the mean time,
+* NAS hosted Git
+* Encrypted cloud backup
+* Keep workstation configuration distinct from server/network configuration
+* Design Ansible inventories, tasks, plays, playbooks, etc. using a vertical feature design so that 'code'
+  is cohesive and loosely coupled.
+* Document the SSoT abstraction layers, e.g, docker container, pi, secrets.
+
+Steps:
+1. Create a Git repo on the NAS using Ansible.
+2. Automate backing it up. (This is separate because it might involve a backup solution for more than just the repo.)
+3. Test a catastrophic failure.
+4. Follow the TechnoTim video for creating a new linux server. Use Ansible.
+5. Create Synology configuration backup and save distinct from the repo.
+
+=== Step 1. Create a Git repo on the NAS using Ansible ===
+Google.
+
+Docker: jkarlos/git-server-docker
+```bash
+docker run -d -p 2222:22 -v ~/git-server/keys:/git-server/keys -v ~/git-server/repos:/git-server/repos jkarlos/git-server-docker
+```
+
+=== Step 2. Automate backing it up ===
+=== Step 3. Test a catastrophic failure ===
+=== Step 4. Follow the TechnoTim video for creating a new linux server ===
+
+== How to Update Unifi controller software ==
 ssh into the controller server
 
-```cd ~/docker/unifi
+```bash
+cd ~/docker/unifi
 docker-compose down
+docker-compose pull
 docker-compose up --build -d
 ```
 
-== Move or Redefine a Device ==
+== Unifi Network Controller ==
+
+=== Moving or Redefining a Device ===
+
+When moving a device to another Network Controller software instance...
+
 Always `forget` a device before executing `set-default` on the device.
 
 Make sure the `Gateway IP` is correct in the default network in the controller software. It should point to the IP of
 the USG.
 
 === Connect USG to ATT ===
+
 Att assigns `192.168.1.1` to the USG after the USG has been reset to factory defaults. Change that IP to 10.0.0.1,
 or your preference, as the first step. If you don't the USG will not be able to see the internet.
 
-=== Inform ===
-The `inform` url must be an IP address, not a domain name; give the controller server a static IP when you are done.
-Sample: `http://10.0.0.8:8080/inform`
+=== Network Application settings ===
 
-==== Network Application settings ====
 Set `Network application Hostname/IP` to the IP of the server that's running the controller, i.e., `10.0.0.6`.
 Enable `Override inform host with the Network application hostname/IP.`
 Save.
@@ -30,15 +70,43 @@ Save.
 Changing these values will probably cause all of your devices to get hoarked and require setting to factory defaults
 and begin the Chain of Frustration(TM).
 
-== SSH Keys to Devices ==
+=== Inform ===
 
-== SMTP Server ==
-
-== Remote Logging ==
-
-== Firewall ==
+The `inform` url must be an IP address, not a domain name; give the controller server a static IP when you are done.
+Sample: `http://10.0.0.8:8080/inform`
 
 == ATT ==
+
 The Att router can provide wifi. It's IP is 192.168.1.254. The password is in 1Password.
 The `IP Passthrough` settings are under `Firewall`.
+
+== Ansible ==
+
+== SSH Keys to Devices ==
+
+== Docker NFS Volumes ==
+The host, i.e. the linux server, needs to have the nfs-common package
+
+```bash
+sudo apt install nfs-common
+```
+
+In docker-compose.yml
+```yml
+volumes:
+  [volume-name]: # e.g., logs
+  driver_opts:
+    type: "nfs"
+    o: "addr=osiris.wmxt,rw" # search 'docker volume create'
+    device: ":/volume1/logs" # the path to the share
+```
+
+Use the [volume-name] for the lhs value in the volumes definittion for the service.
+```yml
+services:
+  unifi:
+    image: jacobalberty/unifi:latest
+    volumes:
+      - [volume-name]:/unifi
+```
 

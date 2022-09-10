@@ -18,6 +18,10 @@ ctrl-b # for window by number
 tmux new -s<session-name>
 
 == Todo ==
+* switch neovim to lua config
+* make terminal open with zoom 3.
+* create a hotkey for a new terminal window
+*
 * make ctrl-shift the i3 mod key?
 * create a tmux instance in WS2 with .dotfiles shell and vim of various configs
 * create a tmux in WS1 with shell and wiki.
