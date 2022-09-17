@@ -39,3 +39,4 @@ tmux new -s<session-name>
 * [[Fish]] -- Aliases and functions.
 * [[Yabai]] -- Shortcuts and schemas.
 * [[skhd]] -- Keyboard shortcuts.
+* [[peeves]] -- Things that need solutions.

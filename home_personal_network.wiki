@@ -36,13 +36,14 @@ docker run -d -p 2222:22 -v ~/git-server/keys:/git-server/keys -v ~/git-server/r
 === Step 4. Follow the TechnoTim video for creating a new linux server ===
 
 == How to Update Unifi controller software ==
-ssh into the controller server
-
+1. backup via the web interface.
+2. ssh into the controller server
+3. update via docker...
 ```bash
-cd ~/docker/unifi
-docker-compose down
-docker-compose pull
-docker-compose up --build -d
+    cd ~/docker/unifi
+    docker-compose down
+    docker-compose pull
+    docker-compose up --build -d
 ```
 
 == Unifi Network Controller ==

@@ -1,0 +1,6 @@
+= Peeves - Things that beg for solutions =
+
+FOSS projects a begging for overview documentation that includes
+diagrams.
+
+
